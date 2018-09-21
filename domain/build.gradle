@@ -16,10 +16,10 @@ apply plugin: 'kotlin-android-extensions'
 
 ext {
     bintrayRepo = 'Android'
-    bintrayName = 'domain'
+    bintrayName = 'Domain'
 
     publishedGroupId = 'com.artear.domain'
-    libraryName = 'domain'
+    libraryName = 'Domain'
     artifact = 'domain'
 
     libraryDescription = 'domain sample library'
@@ -36,12 +36,14 @@ ext {
     licenseUrl = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
     allLicenses = ["Apache-2.0"]
 
+    //Rx
+    rxJavaVersion = "2.1.0"
+    rxAndroidVersion = "2.0.1"
 }
 
 
 android {
     compileSdkVersion 27
-
 
 
     defaultConfig {
@@ -68,6 +70,10 @@ dependencies {
 
     implementation 'com.android.support:appcompat-v7:27.1.1'
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+
+    //ReactiveX
+    implementation "io.reactivex.rxjava2:rxjava:$project.rxJavaVersion"
+    implementation "io.reactivex.rxjava2:rxandroid:$project.rxAndroidVersion"
 
     testImplementation 'junit:junit:4.12'
 
