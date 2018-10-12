@@ -27,7 +27,7 @@ ext {
     siteUrl = 'https://github.com/Artear/app_lib_domain_android'
     gitUrl = 'https://github.com/Artear/app_lib_domain_android.git'
 
-    libraryVersion = '0.0.1'
+    libraryVersion = '0.0.2'
 
     developerId = 'artear'
     developerName = 'Artear Moviles'
@@ -39,6 +39,8 @@ ext {
     //Rx
     rxJavaVersion = "2.1.0"
     rxAndroidVersion = "2.0.1"
+
+    toolsVersion = "0.0.10"
 }
 
 
@@ -70,6 +72,8 @@ dependencies {
 
     implementation 'com.android.support:appcompat-v7:27.1.1'
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+
+    implementation "com.artear.tools:tools:$project.toolsVersion"
 
     //ReactiveX
     implementation "io.reactivex.rxjava2:rxjava:$project.rxJavaVersion"
