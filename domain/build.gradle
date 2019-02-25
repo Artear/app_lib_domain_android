@@ -80,12 +80,12 @@ dependencies {
     //Kotlin
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 
+    //Tools
+    api "com.artear.tools:tools:$toolsVersion"
+
     //Coroutines
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutinesVersion"
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutinesVersion"
-
-    //Tools
-    api "com.artear.tools:tools:$toolsVersion"
 
     //ReactiveX
     implementation "io.reactivex.rxjava2:rxjava:$rxJavaVersion"

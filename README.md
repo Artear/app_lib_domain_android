@@ -1,5 +1,10 @@
-# Domain
-Domain Lib
+# Domain Library
+
+A useful pack of classes for represent a use case, that works like a bridge between repositories
+ and view models.
+ 
+- Rx Use Case
+- Coroutine Use Case
 
 License
 =======
