@@ -42,7 +42,7 @@ buildscript {
 
 
         // ----------- Coroutines -----------
-        coroutinesVersion = "1.1.1"
+        coroutinesVersion = "1.2.1"
 
 
         // ------------- Artear -------------
