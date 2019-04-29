@@ -9,7 +9,7 @@ A useful pack of classes for represent a use case, that works like a bridge betw
 License
 =======
 
-    Copyright 2018 Artear S.A.
+    Copyright 2019 Artear S.A.
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
