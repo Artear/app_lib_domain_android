@@ -19,11 +19,11 @@ import kotlinx.coroutines.*
 import kotlin.coroutines.CoroutineContext
 
 fun launch(
-    coroutineContext: CoroutineContext,
-    function: suspend CoroutineScope.() -> Unit
+        coroutineContext: CoroutineContext,
+        function: suspend CoroutineScope.() -> Unit
 ): Job = CoroutineScope(coroutineContext).launch(block = function)
 
 fun <H> async(
-    coroutineContext: CoroutineContext,
-    function: suspend CoroutineScope.() -> H
+        coroutineContext: CoroutineContext,
+        function: suspend CoroutineScope.() -> H
 ): Deferred<H>? = CoroutineScope(coroutineContext).async(block = function)
