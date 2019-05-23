@@ -17,5 +17,5 @@ package com.artear.domain.coroutine
 
 interface DataShaper<T, H> {
 
-    suspend fun transform(input: T): H
+    suspend fun transform(input: T): H?
 }
