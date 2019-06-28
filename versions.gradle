@@ -1,53 +1,79 @@
 buildscript {
     ext {
 
-        // -------- Library Version ---------
-        libraryVersion = '0.0.7'
+        sdkVersion = 28
+        buildToolsVersion = "28.0.3"
+        libraryVersion = "0.0.8"
 
+        versionLib = [
+                kotlinVersion      : '1.3.40',
+                android            : [
+                        gradleBuildToolsVersion: '3.4.1'
+                ],
+                artear             : [
+                        toolsVersion         : "0.0.19"
+                ],
+                espresso           : [
+                        coreVersion: "3.2.0"
+                ],
+                junitVersion       : "4.12",
+                androidx           : [
+                        testRunnerVersion      : "1.2.0",
+                        testCoreVersion        : "1.2.0",
+                        extJunitVersion        : "1.1.1"
+                ],
+                plugin             : [
+                        bintrayVersion   : "1.8.4",
+                        dokkaVersion     : "0.9.18",
+                        dcendentsVersion : "2.1"
+                ],
+                reactivex          : [
+                        rxJavaVersion   : "2.1.0",
+                        rxAndroidVersion: "2.1.1"
+                ],
+                coroutines         : [
+                        coroutinesVersion: "1.2.1"
+                ]
+        ]
 
-        // ------------ Kotlin --------------
-        kotlin_version = '1.3.31'
-        kotlinVersion = kotlin_version
+        lib = [
+                kotlin      : [
+                        plugin     : "org.jetbrains.kotlin:kotlin-gradle-plugin:${versionLib.kotlinVersion}",
+                        standardLib: "org.jetbrains.kotlin:kotlin-stdlib-jdk7:${versionLib.kotlinVersion}"
+                ],
+                android     : [
+                        toolsBuildGradle: "com.android.tools.build:gradle:${versionLib.android.gradleBuildToolsVersion}"
+                ],
+                artear      : [
+                        tools         : "com.artear.tools:tools:${versionLib.artear.toolsVersion}"
+                ],
+                espresso    : [
+                        core: "androidx.test.espresso:espresso-core:${versionLib.espresso.coreVersion}"
+                ],
+                junit       : [
+                        library: "junit:junit:${versionLib.junitVersion}"
+                ],
+                androidx    : [
+                        testRunner      : "androidx.test:runner:${versionLib.androidx.testRunnerVersion}",
+                        testCore        : "androidx.test:core:${versionLib.androidx.testCoreVersion}",
+                        extJunit        : "androidx.test.ext:junit:${versionLib.androidx.extJunitVersion}"
+                ],
+                plugin      : [
+                        bintray       : "com.jfrog.bintray.gradle:gradle-bintray-plugin:${versionLib.plugin.bintrayVersion}",
+                        dcendents     : "com.github.dcendents:android-maven-gradle-plugin:${versionLib.plugin.dcendentsVersion}",
+                        dokka         : "org.jetbrains.dokka:dokka-android-gradle-plugin:${versionLib.plugin.dokkaVersion}",
+                ],
+                coroutines  : [
+                        core   : "org.jetbrains.kotlinx:kotlinx-coroutines-core:${versionLib.coroutines.coroutinesVersion}",
+                        android: "org.jetbrains.kotlinx:kotlinx-coroutines-android:${versionLib.coroutines.coroutinesVersion}"
+                ],
+                reactivex   : [
+                        rxjava   : "io.reactivex.rxjava2:rxjava:${versionLib.reactivex.rxJavaVersion}",
+                        rxandroid: "io.reactivex.rxjava2:rxandroid:${versionLib.reactivex.rxAndroidVersion}"
+                ]
 
-
-        // ------------ Gradle --------------
-        gradle_build_version = '3.3.2'
-
-
-        // ------------ Bintray -------------
-        bintrayVersion = '1.8.4'
-
-
-        // ------------ Dokka ---------------
-        dokkaVersion = '0.9.18'
-
-
-        // ---------- dcendents -------------
-        dcendentsVersion = '2.1'
-
-
-        // ------------- Test ---------------
-        junitVersion = '4.12'
-        testRunnerVersion = '1.1.1'
-        espressoCoreVersion = '3.1.1'
-
-        // ----------- Framework ------------
-        // AndroidX
-        appCompatVersion = '1.0.2'
-
-
-        // ----------- ReactiveX ------------
-        rxJavaVersion = "2.1.0"
-        rxAndroidVersion = "2.1.1"
-
-
-        // ----------- Coroutines -----------
-        coroutinesVersion = "1.2.1"
-
-
-        // ------------- Artear -------------
-        toolsVersion = "0.0.19"
-
+        ]
 
     }
+
 }

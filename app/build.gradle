@@ -12,8 +12,8 @@ static def getBranchName() {
 }
 
 android {
-    compileSdkVersion 28
-    buildToolsVersion "28.0.3"
+    compileSdkVersion sdkVersion
+    buildToolsVersion buildToolsVersion
 
     def branch = getBranchName()
     def vCode = 0 + getVersionCode(branch)
@@ -21,12 +21,13 @@ android {
     defaultConfig {
         applicationId "com.artear.domainexample"
         minSdkVersion 17
-        targetSdkVersion 28
+        targetSdkVersion sdkVersion
         versionCode vCode
         versionName libraryVersion
 
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
+
     buildTypes {
         release {
             minifyEnabled false
@@ -40,13 +41,23 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
     //Test
-    testImplementation "junit:junit:$junitVersion"
-    androidTestImplementation "androidx.test:runner:$testRunnerVersion"
-    androidTestImplementation "androidx.test.espresso:espresso-core:$espressoCoreVersion"
+    testImplementation lib.junit.library
+    androidTestImplementation lib.androidx.testCore
+    androidTestImplementation lib.androidx.extJunit
+    androidTestImplementation lib.androidx.testRunner
+    androidTestImplementation lib.espresso.core
 
     //Kotlin
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlinVersion"
+    implementation lib.kotlin.standardLib
 
-    //AndroidX
-    implementation "androidx.appcompat:appcompat:$appCompatVersion"
+    //Tools
+    api lib.artear.tools
+
+    //Coroutines
+    implementation lib.coroutines.core
+    implementation lib.coroutines.android
+
+    //ReactiveX
+    implementation lib.reactivex.rxjava
+    implementation lib.reactivex.rxandroid
 }

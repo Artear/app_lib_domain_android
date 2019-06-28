@@ -6,6 +6,28 @@ A useful pack of classes for represent a use case, that works like a bridge betw
 - Rx Use Case
 - Coroutine Use Case
 
+Version 
+--------
+
+[![Latest Version](https://api.bintray.com/packages/artearmobile/Android/Domain/images/download.svg)](https://bintray.com/artearmobile/Android/Domain/_latestVersion)
+
+
+Download
+--------
+via Maven:
+```xml
+<dependency>
+  <groupId>com.artear</groupId>
+  <artifactId>domain</artifactId>
+  <version>0.0.8</version>
+</dependency>
+```
+or Gradle:
+```groovy
+implementation "com.artear:domain:0.0.8"
+```
+Domain Library requires at minimum Java 7 or Android 4.1.
+
 License
 =======
 
