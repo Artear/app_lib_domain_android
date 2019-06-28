@@ -1,22 +1,29 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 buildscript {
-    apply from: 'versions.gradle'
 
     repositories {
+        apply from: 'versions.gradle'
         google()
+        mavenCentral()
+        maven { url 'https://plugins.gradle.org/m2/' }
         jcenter()
     }
+
     dependencies {
-        classpath "com.android.tools.build:gradle:$gradle_build_version"
-        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+        classpath lib.android.toolsBuildGradle
+        classpath lib.kotlin.plugin
     }
+
 }
 
 allprojects {
+
     repositories {
         google()
+        mavenCentral()
         jcenter()
     }
+
 }
 
 task clean(type: Delete) {
